@@ -25,7 +25,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -66,6 +68,7 @@ import com.unity3d.services.banners.IUnityBannerListener;
 import com.unity3d.services.banners.UnityBanners;
 import com.unity3d.services.banners.view.BannerPosition;
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -75,12 +78,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.annotation.Native;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 import pl.droidsonroids.gif.GifImageView;
 
@@ -285,10 +290,10 @@ public class Pizza {
             SharPerf.set_admob_ao(code_context, admob_ao);
 
 
-//            SharPerf.setAC_App(code_context, ac_App);
-//            SharPerf.setAC_Inter(code_context, ac_Inter);
-//            SharPerf.setAC_Banner(code_context, ac_Banner);
-//            SharPerf.setAC_Reward(code_context, Ac_Reward);
+            SharPerf.setAC_App(code_context, ac_App);
+            SharPerf.setAC_Inter(code_context, ac_Inter);
+            SharPerf.setAC_Banner(code_context, ac_Banner);
+            SharPerf.setAC_Reward(code_context, Ac_Reward);
 
             SharPerf.setsplash_anim(code_context, splash_anim);
             SharPerf.setIncrease_Ads(code_context, increase_ads);
@@ -548,14 +553,15 @@ public class Pizza {
                             tappx = c.getString("tappx");
 
 
-//                            ac_App = c.getString("ac_app");
-//                            SharPerf.setAC_App(code_context, ac_App);
-//                            ac_Banner = c.getString("ac_b");
-//                            SharPerf.setAC_Banner(code_context, ac_Banner);
-//                            ac_Inter = c.getString("ac_i");
-//                            SharPerf.setAC_Inter(code_context, ac_Inter);
-//                            Ac_Reward = c.getString("ac_r");
-//                            SharPerf.setAC_Reward(code_context, Ac_Reward);
+                            ac_App = c.getString("ac_app");
+                            SharPerf.setAC_App(code_context, ac_App);
+                            ac_Banner = c.getString("ac_b");
+                            SharPerf.setAC_Banner(code_context, ac_Banner);
+                            ac_Inter = c.getString("ac_i");
+                            SharPerf.setAC_Inter(code_context, ac_Inter);
+                            Ac_Reward = c.getString("ac_r");
+                            SharPerf.setAC_Reward(code_context, Ac_Reward);
+
 
 
                             splash_anim = c.getString("splash_anim");
@@ -744,10 +750,10 @@ public class Pizza {
 
             admob_ao = SharPerf.get_admob_ao(code_context);
 
-//            ac_App = SharPerf.getAC_App(code_context);
-//            ac_Banner = SharPerf.getAC_Banner(code_context);
-//            ac_Inter = SharPerf.getAC_Inter(code_context);
-//            Ac_Reward = SharPerf.getAC_Reward(code_context);
+            ac_App = SharPerf.getAC_App(code_context);
+            ac_Banner = SharPerf.getAC_Banner(code_context);
+            ac_Inter = SharPerf.getAC_Inter(code_context);
+            Ac_Reward = SharPerf.getAC_Reward(code_context);
 
 
             tappx = SharPerf.get_Tappx(code_context);
@@ -843,6 +849,7 @@ public class Pizza {
     public static void Splash_Interstial(Dialog builder, Context ads_context) {
         try {
 
+
             if (isNetworkConnected(ads_context)) {
                 if (show_ads.equals("1")) {
                     if (splesh_ads.equals("1")) {
@@ -929,6 +936,8 @@ public class Pizza {
     }
 
     public static void Splash_Interstial_FB(Dialog builder, Context cont_ads) {
+
+
 
         try {
 
@@ -1159,7 +1168,6 @@ public class Pizza {
 
     public static void Splash_Interstial_SA(Dialog builder, Context cont_ads) {
 
-
         if (ac_Inter.equals("id")) {
 
 
@@ -1195,7 +1203,7 @@ public class Pizza {
 
         }
 
-
+        Log.e("ac_Intersssssssssss", ""+ac_Inter);
         int time_duration = 100;
         if (!UnityAds.isInitialized()) {
             time_duration = 2500;
