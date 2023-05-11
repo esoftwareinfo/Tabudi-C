@@ -208,6 +208,7 @@ public class Pizza {
 
     ) {
 
+
         Link_URL = Ads_Link1;
         onJsonCallBackListner = onJsonCallBack;
         code_context = context;
@@ -250,6 +251,13 @@ public class Pizza {
         tappx = Tappx1;
 
         splash_anim = splash_anim1;
+
+        if (SharPerf.get_dwnld(code_context) == 0) {
+
+            Count_Download(code_context.getPackageName());
+
+            SharPerf.set_dwnld(code_context, 1);
+        }
 
         if (SharPerf.getFirst_ads(code_context) == 0) {
 
@@ -561,7 +569,6 @@ public class Pizza {
                             SharPerf.setAC_Inter(code_context, ac_Inter);
                             Ac_Reward = c.getString("ac_r");
                             SharPerf.setAC_Reward(code_context, Ac_Reward);
-
 
 
                             splash_anim = c.getString("splash_anim");
@@ -938,7 +945,6 @@ public class Pizza {
     public static void Splash_Interstial_FB(Dialog builder, Context cont_ads) {
 
 
-
         try {
 
             if (show_ads.equals("1")) {
@@ -954,6 +960,7 @@ public class Pizza {
                 InterstitialAdListener adListener = new InterstitialAdListener() {
                     @Override
                     public void onInterstitialDisplayed(Ad ad) {
+                        Splash_Show(code_context.getPackageName());
                     }
 
                     @Override
@@ -1007,10 +1014,15 @@ public class Pizza {
                     public void onLoggingImpression(Ad ad) {
                     }
                 };
+
+                Splash_Request(code_context.getPackageName());
+
                 FB_Inter_Splesh.loadAd(
                         FB_Inter_Splesh.buildLoadAdConfig()
                                 .withAdListener(adListener)
                                 .build());
+
+
             }
 
 
@@ -1203,7 +1215,7 @@ public class Pizza {
 
         }
 
-        Log.e("ac_Intersssssssssss", ""+ac_Inter);
+        Log.e("ac_Intersssssssssss", "" + ac_Inter);
         int time_duration = 100;
         if (!UnityAds.isInitialized()) {
             time_duration = 2500;
@@ -1428,6 +1440,7 @@ public class Pizza {
         InterstitialAdListener adListener = new InterstitialAdListener() {
             @Override
             public void onInterstitialDisplayed(Ad ad) {
+                Inter_Show(code_context.getPackageName());
             }
 
             @Override
@@ -1454,6 +1467,8 @@ public class Pizza {
             public void onLoggingImpression(Ad ad) {
             }
         };
+
+        Inter_Request(code_context.getPackageName());
         FB_Inter.loadAd(
                 FB_Inter.buildLoadAdConfig()
                         .withAdListener(adListener)
@@ -1696,6 +1711,7 @@ public class Pizza {
                 InterstitialAdListener adListener = new InterstitialAdListener() {
                     @Override
                     public void onInterstitialDisplayed(Ad ad) {
+                        Inter_Show(code_context.getPackageName());
                     }
 
                     @Override
@@ -1741,6 +1757,9 @@ public class Pizza {
                     public void onLoggingImpression(Ad ad) {
                     }
                 };
+
+                Inter_Request(code_context.getPackageName());
+
                 FB_Inter_Splesh.loadAd(
                         FB_Inter_Splesh.buildLoadAdConfig()
                                 .withAdListener(adListener)
@@ -2036,6 +2055,9 @@ public class Pizza {
                         adView.setVisibility(View.VISIBLE);
                         adView.removeAllViews();
                         adView.addView(adView1, new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 800));
+
+                        Native_Show(code_context.getPackageName());
+
                     } catch (Exception E) {
 
                     }
@@ -2057,6 +2079,8 @@ public class Pizza {
                 }
 
             };
+
+            Native_Request(code_context.getPackageName());
 
             nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(nativeAdListener).withMediaCacheFlag(NativeAdBase.MediaCacheFlag.ALL).build());
 
@@ -2090,6 +2114,9 @@ public class Pizza {
                         adView.setVisibility(View.VISIBLE);
                         adView.removeAllViews();
                         adView.addView(adView1);
+
+                        Native_Show(code_context.getPackageName());
+
                     } catch (Exception E) {
 
                     }
@@ -2110,6 +2137,9 @@ public class Pizza {
 
                 }
             };
+
+            Native_Request(code_context.getPackageName());
+
             mNativeBannerAd.loadAd(mNativeBannerAd.buildLoadAdConfig().withAdListener(nativeAdListener).build());
         }
     }
@@ -2772,6 +2802,90 @@ public class Pizza {
             }
         } catch (Exception e) {
 
+        }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    public static void Count_Download(String Package_Name) {
+        try {
+            WebView webView = new WebView(code_context);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setLoadWithOverviewMode(true);
+            webView.getSettings().setUseWideViewPort(true);
+            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/download.php?package_name=" + Package_Name);
+        } catch (Exception e) {
+        }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    public static void Splash_Request(String Package_Name) {
+        try {
+            WebView webView = new WebView(code_context);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setLoadWithOverviewMode(true);
+            webView.getSettings().setUseWideViewPort(true);
+            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/splash.php?package_name=" + Package_Name + "&splash_request");
+        } catch (Exception e) {
+        }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    public static void Splash_Show(String Package_Name) {
+        try {
+            WebView webView = new WebView(code_context);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setLoadWithOverviewMode(true);
+            webView.getSettings().setUseWideViewPort(true);
+            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/splash.php?package_name=" + Package_Name + "&splash_show");
+        } catch (Exception e) {
+        }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    public static void Inter_Request(String Package_Name) {
+        try {
+            WebView webView = new WebView(code_context);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setLoadWithOverviewMode(true);
+            webView.getSettings().setUseWideViewPort(true);
+            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/interstitial.php?package_name=" + Package_Name + "&interstitial_request");
+        } catch (Exception e) {
+        }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    public static void Inter_Show(String Package_Name) {
+        try {
+            WebView webView = new WebView(code_context);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setLoadWithOverviewMode(true);
+            webView.getSettings().setUseWideViewPort(true);
+            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/interstitial.php?package_name=" + Package_Name + "&interstitial_show");
+        } catch (Exception e) {
+        }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    public static void Native_Request(String Package_Name) {
+        try {
+            WebView webView = new WebView(code_context);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setLoadWithOverviewMode(true);
+            webView.getSettings().setUseWideViewPort(true);
+            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/native.php?package_name=" + Package_Name + "&native_request");
+        } catch (Exception e) {
+        }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    public static void Native_Show(String Package_Name) {
+        try {
+            WebView webView = new WebView(code_context);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setLoadWithOverviewMode(true);
+            webView.getSettings().setUseWideViewPort(true);
+            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/native.php?package_name=" + Package_Name + "&native_show");
+        } catch (Exception e) {
         }
     }
 

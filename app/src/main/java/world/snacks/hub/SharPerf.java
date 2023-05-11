@@ -5,6 +5,17 @@ import android.content.Context;
 
 public class SharPerf {
 
+    public static String dwnld = "dwnld";
+
+    public static void set_dwnld(Context mContext, Integer integer) {
+        mContext.getSharedPreferences(mContext.getPackageName(), 0).edit()
+                .putInt(dwnld, integer).commit();
+    }
+
+    public static int get_dwnld(Context mContext) {
+        return mContext.getSharedPreferences(mContext.getPackageName(), 0)
+                .getInt(dwnld, 0);
+    }
 
 
     public static String show_ads = "show_ads";
@@ -85,7 +96,6 @@ public class SharPerf {
     }
 
 
-
     private static final String First_ads = "First_ads";
 
 
@@ -112,9 +122,6 @@ public class SharPerf {
         return mContext.getSharedPreferences(mContext.getPackageName(), 0)
                 .getInt(First_ads_splesh, 0);
     }
-
-
-
 
 
     private static final String Increase_Ads = "Increase_Ads";
@@ -195,8 +202,6 @@ public class SharPerf {
     }
 
 
-
-
     public static String fb_b = "fb_b";
 
     public static void set_fb_b(Context mContext, String string) {
@@ -275,7 +280,7 @@ public class SharPerf {
                 .getString(GL_Setup_Ads, "L");
     }
 
-    public static String admob_i1= "admob_i1";
+    public static String admob_i1 = "admob_i1";
 
     public static void set_admob_i1(Context mContext, String string) {
         mContext.getSharedPreferences(mContext.getPackageName(), 0).edit()
@@ -287,7 +292,7 @@ public class SharPerf {
                 .getString(admob_i1, Pizza.admob_i1);
     }
 
-    public static String admob_i11= "admob_i11";
+    public static String admob_i11 = "admob_i11";
 
     public static void set_admob_i11(Context mContext, String string) {
         mContext.getSharedPreferences(mContext.getPackageName(), 0).edit()
@@ -300,7 +305,7 @@ public class SharPerf {
     }
 
 
-    public static String admob_i2= "admob_i2";
+    public static String admob_i2 = "admob_i2";
 
     public static void set_admob_i2(Context mContext, String string) {
         mContext.getSharedPreferences(mContext.getPackageName(), 0).edit()
@@ -312,7 +317,7 @@ public class SharPerf {
                 .getString(admob_i2, Pizza.admob_i2);
     }
 
-    public static String admob_i22= "admob_i22";
+    public static String admob_i22 = "admob_i22";
 
     public static void set_admob_i22(Context mContext, String string) {
         mContext.getSharedPreferences(mContext.getPackageName(), 0).edit()
@@ -496,17 +501,6 @@ public class SharPerf {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
     public static String admob_ao = "admob_ao";
 
     public static void set_admob_ao(Context mContext, String string) {
@@ -581,7 +575,6 @@ public class SharPerf {
         return mContext.getSharedPreferences(mContext.getPackageName(), 0)
                 .getString(Tappx, "");
     }
-
 
 
     private static final String BGColor = "BGColor";
@@ -760,8 +753,6 @@ public class SharPerf {
         return mContext.getSharedPreferences(mContext.getPackageName(), 0)
                 .getString(Extra5, "0");
     }
-
-
 
 
 }
