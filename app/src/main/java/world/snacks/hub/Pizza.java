@@ -181,30 +181,7 @@ public class Pizza {
     public static ArrayList<String> Google_SetUp_List_Custom = new ArrayList<>(Arrays.asList("L"));
 
 
-    public Pizza(Context context, OnJsonCallBackListner onJsonCallBack, String App_Name1, String Ads_Link1, String Package, int show_ads1, int FB_setup_ads1, String GL_setup_ads1, int splesh_ads1, int increase_ads1, String splash_anim1,
-                 String FB_Banner11, String FB_Banner22, String FB_Banner33, String FB_Banner44, String FB_Banner55,
-                 String FB_MR11, String FB_MR22, String FB_MR33, String FB_MR44, String FB_MR55,
-                 String FB_Inter11, String FB_Inter22, String FB_Inter33, String FB_Inter44, String FB_Inter55,
-                 String FB_Native11, String FB_Native22, String FB_Native33, String FB_Native44, String FB_Native55,
-                 String FB_NativeSmall11, String FB_NativeSmall22, String FB_NativeSmall33, String FB_NativeSmall44, String FB_NativeSmall55,
-                 String AC_App_ID1, String AC_Inter_ID1, String AC_Banner_ID1, String AC_Reward_ID1,
-                 String Tappx1,
-                 String Admob_App_ID1,
-                 String Admob_Inter_ID_1, String Admob_Inter_ID_11,
-                 String Admob_Inter_ID_2, String Admob_Inter_ID_22,
-                 String Admob_Inter_ID_3, String Admob_Inter_ID_33,
-                 String Admob_Banner_ID_1, String Admob_Banner_ID_11,
-                 String Admob_Banner_ID_2, String Admob_Banner_ID_22,
-                 String Admob_Banner_ID_3, String Admob_Banner_ID_33,
-                 String Admob_Native_ID_1, String Admob_Native_ID_11,
-                 String Admob_Native_ID_2, String Admob_Native_ID_22,
-                 String Admob_Native_ID_3, String Admob_Native_ID_33,
-                 String Admob_AppOpen_ID_1, String Admob_AppOpen_ID_11,
-                 String Admob_AppOpen_ID_2, String Admob_AppOpen_ID_22,
-                 String Admob_AppOpen_ID_3, String Admob_AppOpen_ID_33,
-                 String Admob_rvi_id_ID1, String Admob_rvi_id_ID11,
-                 String Admob_rvi_id_ID2, String Admob_rvi_id_ID22,
-                 String Admob_rvi_id_ID3, String Admob_rvi_id_ID33
+    public Pizza(Context context, OnJsonCallBackListner onJsonCallBack, String App_Name1, String Ads_Link1, String Package, int show_ads1, int FB_setup_ads1, String GL_setup_ads1, int splesh_ads1, int increase_ads1, String splash_anim1, String FB_Banner11, String FB_Banner22, String FB_Banner33, String FB_Banner44, String FB_Banner55, String FB_MR11, String FB_MR22, String FB_MR33, String FB_MR44, String FB_MR55, String FB_Inter11, String FB_Inter22, String FB_Inter33, String FB_Inter44, String FB_Inter55, String FB_Native11, String FB_Native22, String FB_Native33, String FB_Native44, String FB_Native55, String FB_NativeSmall11, String FB_NativeSmall22, String FB_NativeSmall33, String FB_NativeSmall44, String FB_NativeSmall55, String AC_App_ID1, String AC_Inter_ID1, String AC_Banner_ID1, String AC_Reward_ID1, String Tappx1, String Admob_App_ID1, String Admob_Inter_ID_1, String Admob_Inter_ID_11, String Admob_Inter_ID_2, String Admob_Inter_ID_22, String Admob_Inter_ID_3, String Admob_Inter_ID_33, String Admob_Banner_ID_1, String Admob_Banner_ID_11, String Admob_Banner_ID_2, String Admob_Banner_ID_22, String Admob_Banner_ID_3, String Admob_Banner_ID_33, String Admob_Native_ID_1, String Admob_Native_ID_11, String Admob_Native_ID_2, String Admob_Native_ID_22, String Admob_Native_ID_3, String Admob_Native_ID_33, String Admob_AppOpen_ID_1, String Admob_AppOpen_ID_11, String Admob_AppOpen_ID_2, String Admob_AppOpen_ID_22, String Admob_AppOpen_ID_3, String Admob_AppOpen_ID_33, String Admob_rvi_id_ID1, String Admob_rvi_id_ID11, String Admob_rvi_id_ID2, String Admob_rvi_id_ID22, String Admob_rvi_id_ID3, String Admob_rvi_id_ID33
 
     ) {
 
@@ -339,11 +316,8 @@ public class Pizza {
                 int width = 480, Height = 800;
                 final Dialog builder = new Dialog(ads_context);
                 builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                builder.getWindow().setBackgroundDrawable(
-                        new ColorDrawable(Color.BLACK));
-                builder.getWindow().setFlags(
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                builder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+                builder.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
                 WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
                 lp.copyFrom(builder.getWindow().getAttributes());
@@ -358,8 +332,7 @@ public class Pizza {
                 });
 
                 DisplayMetrics displayMetrics = new DisplayMetrics();
-                builder.getWindow().getWindowManager().getDefaultDisplay()
-                        .getMetrics(displayMetrics);
+                builder.getWindow().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
                 width = displayMetrics.widthPixels;
                 Height = displayMetrics.heightPixels;
@@ -388,20 +361,15 @@ public class Pizza {
                 colorAnimation.start();
 
                 RL.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM);
-                builder.addContentView(RL, new RelativeLayout.LayoutParams(
-                        WindowManager.LayoutParams.MATCH_PARENT,
-                        WindowManager.LayoutParams.MATCH_PARENT));
+                builder.addContentView(RL, new RelativeLayout.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
 
                 ImageView imageView = new ImageView(ads_context);
                 imageView.setImageResource(icLauncher);
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 int image_paadding = ((int) (width / 5));
-                imageView.setPadding(image_paadding, image_paadding,
-                        image_paadding, image_paadding);
+                imageView.setPadding(image_paadding, image_paadding, image_paadding, image_paadding);
                 imageView.setTranslationY(-(int) (Height / 7));
-                builder.addContentView(imageView, new RelativeLayout.LayoutParams(
-                        WindowManager.LayoutParams.MATCH_PARENT,
-                        WindowManager.LayoutParams.MATCH_PARENT));
+                builder.addContentView(imageView, new RelativeLayout.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
 
 
                 TextView theText = new TextView(ads_context);
@@ -412,23 +380,16 @@ public class Pizza {
                 theText.setTranslationY(-(int) (Height / 5.5));
 
                 theText.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM);
-                builder.addContentView(theText, new RelativeLayout.LayoutParams(
-                        WindowManager.LayoutParams.MATCH_PARENT,
-                        WindowManager.LayoutParams.MATCH_PARENT));
+                builder.addContentView(theText, new RelativeLayout.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
 
                 ProgressBar progressBar = new ProgressBar(ads_context);
 
-                progressBar.getIndeterminateDrawable().setColorFilter(Text_Color,
-                        android.graphics.PorterDuff.Mode.MULTIPLY);
+                progressBar.getIndeterminateDrawable().setColorFilter(Text_Color, android.graphics.PorterDuff.Mode.MULTIPLY);
 
                 int progressBar_padding = ((int) (width / 2.5));
-                progressBar.setPadding(progressBar_padding, progressBar_padding,
-                        progressBar_padding, progressBar_padding);
+                progressBar.setPadding(progressBar_padding, progressBar_padding, progressBar_padding, progressBar_padding);
                 progressBar.setTranslationY((float) ((Height) / 2.5));
-                builder.addContentView(progressBar,
-                        new RelativeLayout.LayoutParams(
-                                WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT));
+                builder.addContentView(progressBar, new RelativeLayout.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
 
                 try {
                     builder.show();
@@ -1017,10 +978,7 @@ public class Pizza {
 
                 Splash_Request(code_context.getPackageName());
 
-                FB_Inter_Splesh.loadAd(
-                        FB_Inter_Splesh.buildLoadAdConfig()
-                                .withAdListener(adListener)
-                                .build());
+                FB_Inter_Splesh.loadAd(FB_Inter_Splesh.buildLoadAdConfig().withAdListener(adListener).build());
 
 
             }
@@ -1083,97 +1041,96 @@ public class Pizza {
                     google_id_exchange_L = 1;
                 }
             }
-            com.google.android.gms.ads.interstitial.InterstitialAd.load(cont_ads, Ad_inter_request_Id, adRequest,
-                    new InterstitialAdLoadCallback() {
-                        @Override
-                        public void onAdLoaded(@NonNull com.google.android.gms.ads.interstitial.InterstitialAd interstitialAd) {
+            com.google.android.gms.ads.interstitial.InterstitialAd.load(cont_ads, Ad_inter_request_Id, adRequest, new InterstitialAdLoadCallback() {
+                @Override
+                public void onAdLoaded(@NonNull com.google.android.gms.ads.interstitial.InterstitialAd interstitialAd) {
+                    try {
+
+                        gogole_splesh_inter_id_count = 0;
+                        handler_splesh_counter.removeCallbacks(runnable_splesh_counter);
+                        if (Splesh_Timer) {
+
+                        } else {
+
+                            interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                                @Override
+                                public void onAdClicked() {
+                                    super.onAdClicked();
+                                }
+
+                                @Override
+                                public void onAdDismissedFullScreenContent() {
+                                    super.onAdDismissedFullScreenContent();
+                                    Interstial_Load(cont_ads);
+                                }
+
+                                @Override
+                                public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
+                                    super.onAdFailedToShowFullScreenContent(adError);
+                                    Splash_Interstial_SA(builder, cont_ads);
+                                }
+
+                                @Override
+                                public void onAdShowedFullScreenContent() {
+                                    super.onAdShowedFullScreenContent();
+                                }
+
+                                @Override
+                                public void onAdImpression() {
+                                    super.onAdImpression();
+                                }
+                            });
+
+
+                            interstitialAd.show((Activity) cont_ads);
+
                             try {
-
-                                gogole_splesh_inter_id_count = 0;
-                                handler_splesh_counter.removeCallbacks(runnable_splesh_counter);
-                                if (Splesh_Timer) {
-
-                                } else {
-
-                                    interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                                        @Override
-                                        public void onAdClicked() {
-                                            super.onAdClicked();
-                                        }
-
-                                        @Override
-                                        public void onAdDismissedFullScreenContent() {
-                                            super.onAdDismissedFullScreenContent();
-                                            Interstial_Load(cont_ads);
-                                        }
-
-                                        @Override
-                                        public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
-                                            super.onAdFailedToShowFullScreenContent(adError);
-                                            Splash_Interstial_SA(builder, cont_ads);
-                                        }
-
-                                        @Override
-                                        public void onAdShowedFullScreenContent() {
-                                            super.onAdShowedFullScreenContent();
-                                        }
-
-                                        @Override
-                                        public void onAdImpression() {
-                                            super.onAdImpression();
-                                        }
-                                    });
-
-
-                                    interstitialAd.show((Activity) cont_ads);
-
-                                    try {
-                                        if (builder != null) {
-                                            if (builder.isShowing()) {
-                                                builder.dismiss();
-                                            }
-                                        }
-                                    } catch (final IllegalArgumentException e) {
-
-                                    } catch (final Exception e) {
-                                    } finally {
-
+                                if (builder != null) {
+                                    if (builder.isShowing()) {
+                                        builder.dismiss();
                                     }
                                 }
+                            } catch (final IllegalArgumentException e) {
+
+                            } catch (final Exception e) {
+                            } finally {
+
+                            }
+                        }
 
 
-                            } catch (Exception e) {
-                                try {
-                                    if (builder != null) {
-                                        if (builder.isShowing()) {
-                                            builder.dismiss();
-                                        }
-                                    }
-                                } catch (final IllegalArgumentException e1) {
-
-                                } catch (final Exception e1) {
-                                } finally {
-
+                    } catch (Exception e) {
+                        try {
+                            if (builder != null) {
+                                if (builder.isShowing()) {
+                                    builder.dismiss();
                                 }
                             }
+                        } catch (final IllegalArgumentException e1) {
+
+                        } catch (final Exception e1) {
+                        } finally {
 
                         }
+                    }
 
-                        @Override
-                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                }
 
-                            int aa = gogole_splesh_inter_id_count + 1;
-                            if (aa == Google_SetUp_List_Custom.size()) {
-                                gogole_splesh_inter_id_count = 0;
-                                Splash_Interstial_SA(builder, cont_ads);
-                            } else {
-                                gogole_splesh_inter_id_count = gogole_splesh_inter_id_count + 1;
-                                Splash_Interstial_Google(builder, cont_ads);
-                            }
+                @Override
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+
+                    int aa = gogole_splesh_inter_id_count + 1;
+                    if (aa == Google_SetUp_List_Custom.size()) {
+                        gogole_splesh_inter_id_count = 0;
+                        Splash_Interstial_SA(builder, cont_ads);
+                    } else {
+                        gogole_splesh_inter_id_count = gogole_splesh_inter_id_count + 1;
+                        Splash_Interstial_Google(builder, cont_ads);
+                    }
 
 
-                        }
-                    });
+                }
+            });
         }
 
     }
@@ -1469,10 +1426,7 @@ public class Pizza {
         };
 
         Inter_Request(code_context.getPackageName());
-        FB_Inter.loadAd(
-                FB_Inter.buildLoadAdConfig()
-                        .withAdListener(adListener)
-                        .build());
+        FB_Inter.loadAd(FB_Inter.buildLoadAdConfig().withAdListener(adListener).build());
     }
 
     public static void Interstial_GL(Context cont_ads) {
@@ -1512,62 +1466,61 @@ public class Pizza {
             }
         }
 
-        com.google.android.gms.ads.interstitial.InterstitialAd.load(cont_ads, Ad_inter_request_Id, adRequest,
-                new InterstitialAdLoadCallback() {
+        com.google.android.gms.ads.interstitial.InterstitialAd.load(cont_ads, Ad_inter_request_Id, adRequest, new InterstitialAdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull com.google.android.gms.ads.interstitial.InterstitialAd interstitialAd) {
+                gogole_splesh_inter_id_count = 0;
+
+                Inter_Loading = false;
+                Google_Inter = interstitialAd;
+                Google_Inter.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
-                    public void onAdLoaded(@NonNull com.google.android.gms.ads.interstitial.InterstitialAd interstitialAd) {
-                        gogole_splesh_inter_id_count = 0;
-
-                        Inter_Loading = false;
-                        Google_Inter = interstitialAd;
-                        Google_Inter.setFullScreenContentCallback(new FullScreenContentCallback() {
-                            @Override
-                            public void onAdClicked() {
-                                super.onAdClicked();
-                            }
-
-                            @Override
-                            public void onAdDismissedFullScreenContent() {
-                                super.onAdDismissedFullScreenContent();
-                                Interstial_Load(cont_ads);
-                            }
-
-                            @Override
-                            public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
-                                super.onAdFailedToShowFullScreenContent(adError);
-                                Interstial_Load(cont_ads);
-                            }
-
-                            @Override
-                            public void onAdImpression() {
-                                super.onAdImpression();
-                            }
-
-                            @Override
-                            public void onAdShowedFullScreenContent() {
-                                super.onAdShowedFullScreenContent();
-                            }
-                        });
-
+                    public void onAdClicked() {
+                        super.onAdClicked();
                     }
 
                     @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        Google_Inter = null;
-                        Inter_Loading = false;
+                    public void onAdDismissedFullScreenContent() {
+                        super.onAdDismissedFullScreenContent();
+                        Interstial_Load(cont_ads);
+                    }
 
+                    @Override
+                    public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
+                        super.onAdFailedToShowFullScreenContent(adError);
+                        Interstial_Load(cont_ads);
+                    }
 
-                        int aa = gogole_splesh_inter_id_count + 1;
-                        if (aa == Google_SetUp_List_Custom.size()) {
-                            gogole_splesh_inter_id_count = 0;
-                        } else {
-                            gogole_splesh_inter_id_count = gogole_splesh_inter_id_count + 1;
-                            Interstial_GL(cont_ads);
-                        }
+                    @Override
+                    public void onAdImpression() {
+                        super.onAdImpression();
+                    }
 
-
+                    @Override
+                    public void onAdShowedFullScreenContent() {
+                        super.onAdShowedFullScreenContent();
                     }
                 });
+
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                Google_Inter = null;
+                Inter_Loading = false;
+
+
+                int aa = gogole_splesh_inter_id_count + 1;
+                if (aa == Google_SetUp_List_Custom.size()) {
+                    gogole_splesh_inter_id_count = 0;
+                } else {
+                    gogole_splesh_inter_id_count = gogole_splesh_inter_id_count + 1;
+                    Interstial_GL(cont_ads);
+                }
+
+
+            }
+        });
 
 
     }
@@ -1760,10 +1713,7 @@ public class Pizza {
 
                 Inter_Request(code_context.getPackageName());
 
-                FB_Inter_Splesh.loadAd(
-                        FB_Inter_Splesh.buildLoadAdConfig()
-                                .withAdListener(adListener)
-                                .build());
+                FB_Inter_Splesh.loadAd(FB_Inter_Splesh.buildLoadAdConfig().withAdListener(adListener).build());
             }
 
 
@@ -1815,90 +1765,89 @@ public class Pizza {
                 }
             }
 
-            com.google.android.gms.ads.interstitial.InterstitialAd.load(cont_ads, Ad_inter_request_Id, adRequest,
-                    new InterstitialAdLoadCallback() {
-                        @Override
-                        public void onAdLoaded(@NonNull com.google.android.gms.ads.interstitial.InterstitialAd interstitialAd) {
-                            try {
-                                gogole_splesh_inter_id_count = 0;
-                                interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                                    @Override
-                                    public void onAdClicked() {
-                                        super.onAdClicked();
-                                    }
-
-                                    @Override
-                                    public void onAdDismissedFullScreenContent() {
-                                        super.onAdDismissedFullScreenContent();
-                                    }
-
-                                    @Override
-                                    public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
-                                        super.onAdFailedToShowFullScreenContent(adError);
-                                        Interstial_SA_LoadShow(builder, cont_ads);
-                                    }
-
-                                    @Override
-                                    public void onAdShowedFullScreenContent() {
-                                        super.onAdShowedFullScreenContent();
-                                    }
-
-                                    @Override
-                                    public void onAdImpression() {
-                                        super.onAdImpression();
-                                    }
-                                });
-
-
-                                interstitialAd.show((Activity) cont_ads);
-
-                                try {
-                                    if (builder != null) {
-                                        if (builder.isShowing()) {
-                                            builder.dismiss();
-                                        }
-                                    }
-                                } catch (final IllegalArgumentException e) {
-
-                                } catch (final Exception e) {
-                                } finally {
-
-                                }
-
-                            } catch (Exception e) {
-                                try {
-                                    if (builder != null) {
-                                        if (builder.isShowing()) {
-                                            builder.dismiss();
-                                        }
-                                    }
-                                } catch (final IllegalArgumentException e1) {
-
-                                } catch (final Exception e1) {
-                                } finally {
-
-                                }
+            com.google.android.gms.ads.interstitial.InterstitialAd.load(cont_ads, Ad_inter_request_Id, adRequest, new InterstitialAdLoadCallback() {
+                @Override
+                public void onAdLoaded(@NonNull com.google.android.gms.ads.interstitial.InterstitialAd interstitialAd) {
+                    try {
+                        gogole_splesh_inter_id_count = 0;
+                        interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                            @Override
+                            public void onAdClicked() {
+                                super.onAdClicked();
                             }
 
-                        }
+                            @Override
+                            public void onAdDismissedFullScreenContent() {
+                                super.onAdDismissedFullScreenContent();
+                            }
 
-                        @Override
-                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-
-
-                            int aa = gogole_splesh_inter_id_count + 1;
-                            if (aa == Google_SetUp_List_Custom.size()) {
-                                gogole_splesh_inter_id_count = 0;
-
+                            @Override
+                            public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
+                                super.onAdFailedToShowFullScreenContent(adError);
                                 Interstial_SA_LoadShow(builder, cont_ads);
-                            } else {
-                                gogole_splesh_inter_id_count = gogole_splesh_inter_id_count + 1;
-                                Interstial_GL(cont_ads);
                             }
 
+                            @Override
+                            public void onAdShowedFullScreenContent() {
+                                super.onAdShowedFullScreenContent();
+                            }
+
+                            @Override
+                            public void onAdImpression() {
+                                super.onAdImpression();
+                            }
+                        });
+
+
+                        interstitialAd.show((Activity) cont_ads);
+
+                        try {
+                            if (builder != null) {
+                                if (builder.isShowing()) {
+                                    builder.dismiss();
+                                }
+                            }
+                        } catch (final IllegalArgumentException e) {
+
+                        } catch (final Exception e) {
+                        } finally {
 
                         }
-                    });
+
+                    } catch (Exception e) {
+                        try {
+                            if (builder != null) {
+                                if (builder.isShowing()) {
+                                    builder.dismiss();
+                                }
+                            }
+                        } catch (final IllegalArgumentException e1) {
+
+                        } catch (final Exception e1) {
+                        } finally {
+
+                        }
+                    }
+
+                }
+
+                @Override
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+
+
+                    int aa = gogole_splesh_inter_id_count + 1;
+                    if (aa == Google_SetUp_List_Custom.size()) {
+                        gogole_splesh_inter_id_count = 0;
+
+                        Interstial_SA_LoadShow(builder, cont_ads);
+                    } else {
+                        gogole_splesh_inter_id_count = gogole_splesh_inter_id_count + 1;
+                        Interstial_GL(cont_ads);
+                    }
+
+
+                }
+            });
         }
     }
 
@@ -2616,6 +2565,7 @@ public class Pizza {
 
                     try {
                         dialog.dismiss();
+                        System.exit(0);
                     } catch (final IllegalArgumentException e) {
 
                     } catch (final Exception e) {
@@ -2624,28 +2574,21 @@ public class Pizza {
                     }
 //                ((Activity) cont_ads).moveTaskToBack(true);
 //                ((Activity) cont_ads).finish();
-                    System.exit(0);
+
 
                 }
             });
             Btn_Rate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Uri uri = Uri.parse("market://details?id="
-                            + code_context.getPackageName());
-                    Intent goToMarket = new Intent(
-                            Intent.ACTION_VIEW, uri);
+                    Uri uri = Uri.parse("market://details?id=" + code_context.getPackageName());
+                    Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
 
-                    goToMarket
-                            .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY
-                                    | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
                     try {
                         cont_ads.startActivity(goToMarket);
                     } catch (ActivityNotFoundException e) {
-                        cont_ads.startActivity(new Intent(
-                                Intent.ACTION_VIEW,
-                                Uri.parse("http://play.google.com/OneForAll/apps/details?id="
-                                        + code_context.getPackageName())));
+                        cont_ads.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/OneForAll/apps/details?id=" + code_context.getPackageName())));
                     }
                 }
             });
@@ -2715,6 +2658,7 @@ public class Pizza {
 
                     try {
                         dialog.dismiss();
+                        System.exit(0);
                     } catch (final IllegalArgumentException e) {
 
                     } catch (final Exception e) {
@@ -2723,28 +2667,21 @@ public class Pizza {
                     }
 //                ((Activity) cont_ads).moveTaskToBack(true);
 //                ((Activity) cont_ads).finish();
-                    System.exit(0);
+
 
                 }
             });
             Btn_Rate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Uri uri = Uri.parse("market://details?id="
-                            + code_context.getPackageName());
-                    Intent goToMarket = new Intent(
-                            Intent.ACTION_VIEW, uri);
+                    Uri uri = Uri.parse("market://details?id=" + code_context.getPackageName());
+                    Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
 
-                    goToMarket
-                            .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY
-                                    | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
                     try {
                         cont_ads.startActivity(goToMarket);
                     } catch (ActivityNotFoundException e) {
-                        cont_ads.startActivity(new Intent(
-                                Intent.ACTION_VIEW,
-                                Uri.parse("http://play.google.com/OneForAll/apps/details?id="
-                                        + code_context.getPackageName())));
+                        cont_ads.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/OneForAll/apps/details?id=" + code_context.getPackageName())));
                     }
                 }
             });
@@ -2788,8 +2725,7 @@ public class Pizza {
 
             } else {
 
-                Toast.makeText(cont_ads, "Press Back Again to Exit",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(cont_ads, "Press Back Again to Exit", Toast.LENGTH_SHORT).show();
 
                 doubleBackToExitPressedOnce = true;
                 new Handler().postDelayed(new Runnable() {
@@ -2807,86 +2743,128 @@ public class Pizza {
 
     @SuppressLint("SetJavaScriptEnabled")
     public static void Count_Download(String Package_Name) {
-        try {
-            WebView webView = new WebView(code_context);
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setLoadWithOverviewMode(true);
-            webView.getSettings().setUseWideViewPort(true);
-            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/download.php?package_name=" + Package_Name);
-        } catch (Exception e) {
+
+        if ((SharPerf.getExtra4(code_context)).equals("1")) {
+
+            try {
+                WebView webView = new WebView(code_context);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setLoadWithOverviewMode(true);
+                webView.getSettings().setUseWideViewPort(true);
+                webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/download.php?package_name=" + Package_Name);
+            } catch (Exception e) {
+            }
+
         }
+
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     public static void Splash_Request(String Package_Name) {
-        try {
-            WebView webView = new WebView(code_context);
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setLoadWithOverviewMode(true);
-            webView.getSettings().setUseWideViewPort(true);
-            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/splash.php?package_name=" + Package_Name + "&splash_request");
-        } catch (Exception e) {
+
+        if ((SharPerf.getExtra4(code_context)).equals("1")) {
+
+            try {
+                WebView webView = new WebView(code_context);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setLoadWithOverviewMode(true);
+                webView.getSettings().setUseWideViewPort(true);
+                webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/splash.php?package_name=" + Package_Name + "&splash_request");
+            } catch (Exception e) {
+            }
+
         }
+
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     public static void Splash_Show(String Package_Name) {
-        try {
-            WebView webView = new WebView(code_context);
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setLoadWithOverviewMode(true);
-            webView.getSettings().setUseWideViewPort(true);
-            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/splash.php?package_name=" + Package_Name + "&splash_show");
-        } catch (Exception e) {
+
+        if ((SharPerf.getExtra4(code_context)).equals("1")) {
+
+            try {
+                WebView webView = new WebView(code_context);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setLoadWithOverviewMode(true);
+                webView.getSettings().setUseWideViewPort(true);
+                webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/splash.php?package_name=" + Package_Name + "&splash_show");
+            } catch (Exception e) {
+            }
+
         }
+
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     public static void Inter_Request(String Package_Name) {
-        try {
-            WebView webView = new WebView(code_context);
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setLoadWithOverviewMode(true);
-            webView.getSettings().setUseWideViewPort(true);
-            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/interstitial.php?package_name=" + Package_Name + "&interstitial_request");
-        } catch (Exception e) {
+
+        if ((SharPerf.getExtra4(code_context)).equals("1")) {
+
+            try {
+                WebView webView = new WebView(code_context);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setLoadWithOverviewMode(true);
+                webView.getSettings().setUseWideViewPort(true);
+                webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/interstitial.php?package_name=" + Package_Name + "&interstitial_request");
+            } catch (Exception e) {
+            }
+
         }
+
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     public static void Inter_Show(String Package_Name) {
-        try {
-            WebView webView = new WebView(code_context);
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setLoadWithOverviewMode(true);
-            webView.getSettings().setUseWideViewPort(true);
-            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/interstitial.php?package_name=" + Package_Name + "&interstitial_show");
-        } catch (Exception e) {
+
+        if ((SharPerf.getExtra4(code_context)).equals("1")) {
+
+            try {
+                WebView webView = new WebView(code_context);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setLoadWithOverviewMode(true);
+                webView.getSettings().setUseWideViewPort(true);
+                webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/interstitial.php?package_name=" + Package_Name + "&interstitial_show");
+            } catch (Exception e) {
+            }
+
         }
+
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     public static void Native_Request(String Package_Name) {
-        try {
-            WebView webView = new WebView(code_context);
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setLoadWithOverviewMode(true);
-            webView.getSettings().setUseWideViewPort(true);
-            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/native.php?package_name=" + Package_Name + "&native_request");
-        } catch (Exception e) {
+
+        if ((SharPerf.getExtra4(code_context)).equals("1")) {
+
+            try {
+                WebView webView = new WebView(code_context);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setLoadWithOverviewMode(true);
+                webView.getSettings().setUseWideViewPort(true);
+                webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/native.php?package_name=" + Package_Name + "&native_request");
+            } catch (Exception e) {
+            }
+
         }
+
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     public static void Native_Show(String Package_Name) {
-        try {
-            WebView webView = new WebView(code_context);
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setLoadWithOverviewMode(true);
-            webView.getSettings().setUseWideViewPort(true);
-            webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/native.php?package_name=" + Package_Name + "&native_show");
-        } catch (Exception e) {
+
+        if ((SharPerf.getExtra4(code_context)).equals("1")) {
+
+            try {
+                WebView webView = new WebView(code_context);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setLoadWithOverviewMode(true);
+                webView.getSettings().setUseWideViewPort(true);
+                webView.loadUrl("https://elveevocsy.click/ElveeVocsy/api/native.php?package_name=" + Package_Name + "&native_show");
+            } catch (Exception e) {
+            }
+
         }
+
     }
 
 }
