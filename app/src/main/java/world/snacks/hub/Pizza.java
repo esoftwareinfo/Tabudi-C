@@ -290,6 +290,117 @@ public class Pizza {
 
     }
 
+
+
+    public Pizza(Context context, OnJsonCallBackListner onJsonCallBack, String App_Name1, String Ads_Link1
+
+    ) {
+
+
+        Link_URL = Ads_Link1;
+        onJsonCallBackListner = onJsonCallBack;
+        code_context = context;
+        show_ads = "" + 0;
+        splesh_ads = "" + 0;
+        fb_b = "id";
+        fb_mr = "id";
+        fb_i = "id";
+        fb_n = "id";
+        fb_ns = "id";
+        admob_i1 = "id";
+        admob_i11 = "id";
+        admob_i2 = "id";
+        admob_i22 = "id";
+        admob_i3 = "id";
+        admob_i33 = "id";
+
+        admob_b1 = "id";
+        admob_b11 = "id";
+        admob_b2 = "id";
+        admob_b22 = "id";
+        admob_b3 = "id";
+        admob_b33 = "id";
+
+        admob_n1 = "id";
+        admob_n11 = "id";
+        admob_n2 = "id";
+        admob_n22 = "id";
+        admob_n3 = "id";
+        admob_n33 = "id";
+
+        admob_ao = "id";
+
+
+        ac_App = "id";
+        ac_Inter = "id";
+        ac_Banner = "id";
+        Ac_Reward = "id";
+
+        tappx = "id";
+
+        splash_anim = "0";
+
+        if (SharPerf.get_dwnld(code_context) == 0) {
+
+            Count_Download(code_context.getPackageName());
+
+            SharPerf.set_dwnld(code_context, 1);
+        }
+
+        if (SharPerf.getFirst_ads(code_context) == 0) {
+
+            SharPerf.set_show_ads(code_context, show_ads);
+            SharPerf.set_counter_ads(code_context, counter_ads);
+            SharPerf.set_splesh_ads(code_context, splesh_ads);
+            SharPerf.set_fb_b(code_context, fb_b);
+            SharPerf.set_fb_mr(code_context, fb_mr);
+            SharPerf.set_fb_i(code_context, fb_i);
+            SharPerf.set_fb_n(code_context, fb_n);
+            SharPerf.set_fb_ns(code_context, fb_ns);
+
+            SharPerf.set_admob_i1(code_context, admob_i1);
+            SharPerf.set_admob_i11(code_context, admob_i11);
+            SharPerf.set_admob_i2(code_context, admob_i2);
+            SharPerf.set_admob_i2(code_context, admob_i22);
+            SharPerf.set_admob_i3(code_context, admob_i3);
+            SharPerf.set_admob_i33(code_context, admob_i33);
+
+
+            SharPerf.set_admob_b1(code_context, admob_b1);
+            SharPerf.set_admob_b11(code_context, admob_b11);
+            SharPerf.set_admob_b2(code_context, admob_b2);
+            SharPerf.set_admob_b22(code_context, admob_b22);
+            SharPerf.set_admob_b3(code_context, admob_b3);
+            SharPerf.set_admob_b33(code_context, admob_b33);
+
+            SharPerf.set_admob_n1(code_context, admob_n1);
+            SharPerf.set_admob_n11(code_context, admob_n11);
+            SharPerf.set_admob_n2(code_context, admob_n2);
+            SharPerf.set_admob_n22(code_context, admob_n22);
+            SharPerf.set_admob_n3(code_context, admob_n3);
+            SharPerf.set_admob_n33(code_context, admob_n33);
+
+            SharPerf.set_Tappx(code_context, tappx);
+
+
+            SharPerf.set_admob_ao(code_context, admob_ao);
+
+
+            SharPerf.setAC_App(code_context, ac_App);
+            SharPerf.setAC_Inter(code_context, ac_Inter);
+            SharPerf.setAC_Banner(code_context, ac_Banner);
+            SharPerf.setAC_Reward(code_context, Ac_Reward);
+
+            SharPerf.setsplash_anim(code_context, splash_anim);
+            SharPerf.setIncrease_Ads(code_context, increase_ads);
+            SharPerf.setFor_Approval(code_context, for_Approval);
+
+            SharPerf.setFirst_ads(code_context, 1);
+
+        }
+
+    }
+
     public static Handler handler_splesh_counter;
     public static Runnable runnable_splesh_counter;
     public static Boolean Splesh_Timer = false;
@@ -1862,6 +1973,19 @@ public class Pizza {
 
             if (!tappx.equals("id")) {
                 StartAppAd.showAd(cont_ads);
+            }
+
+            try {
+                if (builder != null) {
+                    if (builder.isShowing()) {
+                        builder.dismiss();
+                    }
+                }
+            } catch (final IllegalArgumentException e) {
+
+            } catch (final Exception e) {
+            } finally {
+
             }
             return;
         }
